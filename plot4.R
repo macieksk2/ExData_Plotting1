@@ -16,6 +16,8 @@ Sub_meter_1 <- as.numeric(extract$Sub_metering_1)
 Sub_meter_2 <- as.numeric(extract$Sub_metering_2)
 Sub_meter_3 <- as.numeric(extract$Sub_metering_3)
 GAR <- as.numeric(extract$Global_reactive_power)
+#Concatenate date and time
+date_time <- strptime(paste(extract$Date, extract$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
 #Create a png file
 png("plot4.png", width=480, height=480)
 par(mfrow=c(2,2))
